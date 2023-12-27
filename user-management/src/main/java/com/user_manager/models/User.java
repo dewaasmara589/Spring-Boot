@@ -7,6 +7,7 @@ import jakarta.persistence.Transient;
 
 import java.util.Date;
 
+// TODO 1 ~ Make class model to name field table database
 @Entity
 @Table(name = "users")
 public class User {

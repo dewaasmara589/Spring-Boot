@@ -8,6 +8,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+// TODO 7 ~ Make QUERY to Save Data in Database MYSQL
 @Repository
 public interface UserRepository extends CrudRepository<User, Integer> {
 

@@ -1,3 +1,4 @@
+-- TODO 2 ~ Setting and Make Table in Database MYSQL
 -- Database Name:
 CREATE DATABASE user_manager;
 

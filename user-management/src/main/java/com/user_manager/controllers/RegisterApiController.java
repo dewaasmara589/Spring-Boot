@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+// TODO 8 ~ Make Controller Register and Set Required Parameter
 @RestController
 @RequestMapping("/api")
 public class RegisterApiController {
@@ -31,7 +32,7 @@ public class RegisterApiController {
 
         /// Register New User:
         /// result back 1 or 0
-        int result = userService.registerNewUserServiceMethod(firstName, lastName, email, password);
+        int result = userService.registerNewUserServiceMethod(firstName, lastName, email, hashed_password);
 
         if (result != 1){
             return new ResponseEntity<>("Failed to Register User", HttpStatus.BAD_REQUEST);
