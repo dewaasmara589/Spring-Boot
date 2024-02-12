@@ -41,3 +41,6 @@ public class RegisterApiController {
         return new ResponseEntity<>("User Registered Successfully", HttpStatus.OK);
     }
 }
+
+// TODO 9 ~ Make FrontEnd Login and SignUp in Android Java
+// TODO 10 ~ Use IP ADDRESS to Link in Postman (CMD -> ipconfig)
