@@ -1,9 +1,6 @@
 package com.user_manager.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import jakarta.persistence.Transient;
+import jakarta.persistence.*;
 
 import java.util.Date;
 
@@ -12,13 +9,21 @@ import java.util.Date;
 @Table(name = "users")
 public class User {
     @Id
+    @Column(name = "userID")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int userId;
+    @Column(name = "firstNAME")
     private String firstName;
+    @Column(name = "lastNAME")
     private String lastName;
+    @Column(name = "email")
     private String email;
+    @Column(name = "password")
     private String password;
+    @Column(name = "createdAT")
     private Date createdAt;
     @Transient  // Make default create Date to 00:00:00
+    @Column(name = "updateAT")
     private Date updatedAt;
 
     public int getUserId() {

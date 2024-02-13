@@ -26,6 +26,7 @@ public class LoginApiController {
 
         // Get User Email
         List<String> userEmail = userService.checkUserEmail(login.getEmail());
+        System.out.println(userEmail.toString());
 
         // Check if Email is Empty
         if (userEmail.isEmpty() || userEmail == null){
@@ -38,7 +39,7 @@ public class LoginApiController {
 
         // Validate User Password
         if (!BCrypt.checkpw(login.getPassword(), hashedPassword)){
-            return new ResponseEntity("Incorrect username or passowrd", HttpStatus.BAD_REQUEST);
+            return new ResponseEntity("Incorrect username or password", HttpStatus.BAD_REQUEST);
         }
 
         // Set User Object
@@ -47,3 +48,11 @@ public class LoginApiController {
     }
 
 }
+
+// TODO 14 ~ Controller to Login Request
+// Link Test API : http://localhost:9080/api/user/login
+// Body - Raw
+//{
+//   "email" : "coba@gmail.com",
+//   "password" : "coba123"
+//}

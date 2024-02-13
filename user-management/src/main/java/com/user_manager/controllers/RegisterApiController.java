@@ -44,3 +44,4 @@ public class RegisterApiController {
 
 // TODO 9 ~ Make FrontEnd Login and SignUp in Android Java
 // TODO 10 ~ Use IP ADDRESS to Link in Postman (CMD -> ipconfig)
+// Link Test API : http://localhost:9080/api/user/register?firstName=dewa&lastName=dewa2&email=dewa@gmail.com&password=dewa123

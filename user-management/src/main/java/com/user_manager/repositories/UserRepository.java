@@ -20,7 +20,7 @@ public interface UserRepository extends CrudRepository<User, Integer> {
     @Query(value = "SELECT password FROM users WHERE email = :email", nativeQuery = true)
     String checkUserPasswordByEmail(@Param("email") String email);
 
-    @Query(value = "SELECT * FROM users WHERE email = :email", nativeQuery = true)
+    @Query(value= "SELECT * FROM users WHERE email= :email", nativeQuery =true)
     User GetUserDetailsByEmail(@Param("email") String email);
 
     @Transactional
@@ -32,3 +32,5 @@ public interface UserRepository extends CrudRepository<User, Integer> {
                         @Param("password") String password
     );
 }
+
+// TODO 13 ~ Query to check email and password exist in database
