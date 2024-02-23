@@ -1,5 +1,6 @@
 package com.user_manager.repositories;
 
+import com.user_manager.models.UpdatePassword;
 import com.user_manager.models.User;
 import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.Modifying;
@@ -20,8 +21,17 @@ public interface UserRepository extends CrudRepository<User, Integer> {
     @Query(value = "SELECT password FROM users WHERE email = :email", nativeQuery = true)
     String checkUserPasswordByEmail(@Param("email") String email);
 
-    @Query(value= "SELECT * FROM users WHERE email= :email", nativeQuery =true)
+    @Query(value= "SELECT * FROM users WHERE email= :email", nativeQuery = true)
     User GetUserDetailsByEmail(@Param("email") String email);
+
+    // TODO 16 ~ Query to Update Password and current time updatedAt base on email
+    // Requirement to add Modifying to INSERT, UPDATE, DELETE
+    @Transactional
+    @Modifying(clearAutomatically = true)
+    @Query(value= "UPDATE users SET password= :password, updatedAt = CURRENT_TIMESTAMP WHERE email= :email", nativeQuery = true)
+    int SetUpdatePassword(@Param("email") String email,
+                          @Param("password") String password
+    );
 
     @Transactional
     @Modifying

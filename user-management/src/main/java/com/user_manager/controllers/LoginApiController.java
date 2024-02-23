@@ -26,7 +26,6 @@ public class LoginApiController {
 
         // Get User Email
         List<String> userEmail = userService.checkUserEmail(login.getEmail());
-        System.out.println(userEmail.toString());
 
         // Check if Email is Empty
         if (userEmail.isEmpty() || userEmail == null){

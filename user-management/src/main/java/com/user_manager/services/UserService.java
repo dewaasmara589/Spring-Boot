@@ -1,5 +1,6 @@
 package com.user_manager.services;
 
+import com.user_manager.models.UpdatePassword;
 import com.user_manager.models.User;
 import com.user_manager.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +30,12 @@ public class UserService {
 
     public User getUserDetailByEmail(String email){
         return userRepository.GetUserDetailsByEmail(email);
+    }
+    // End of Check User Details By Email
+
+    // TODO 17 ~ Make Function Service to update Password
+    public int setUpdatePassword(String email, String password){
+        return userRepository.SetUpdatePassword(email, password);
     }
     // End of Check User Details By Email
 }
